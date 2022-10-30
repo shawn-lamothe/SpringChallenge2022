@@ -33,8 +33,6 @@ public class CommandLineInterface {
 
             // Launch Game
             MultiplayerGameRunner gameRunner = new MultiplayerGameRunner();
-
-            //Choose league level
             gameRunner.setLeagueLevel(3);
 
             if (cmd.hasOption("d")) {
@@ -48,14 +46,12 @@ public class CommandLineInterface {
             GameResultDto result = gameRunner.gameResult;
 
             int playerCount = 0;
-
             for (int i = 1; i <= 2; ++i) {
                 if (cmd.hasOption("p" + i)) {
-                    gameRunner.addAgent(cmd.getOptionValue("p" + i), cmd.getOptionValue("p" + i));
+                    gameRunner.addAgent(cmd.getOptionValue("p" + i), "p" + i);
                     playerCount += 1;
                 }
             }
-
 
             if (cmd.hasOption("s")) {
                 gameRunner.start();

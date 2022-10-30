@@ -28,7 +28,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>2.4.2</version>
+        <version>3.2.1</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -39,6 +39,9 @@
               <transformers>
                 <transformer>
                   <mainClass>com.codingame.gameengine.runner.CommandLineInterface</mainClass>
+                  <manifestEntries>
+                    <Multi-Release>true</Multi-Release>
+                  </manifestEntries>
                 </transformer>
               </transformers>
             </configuration>
@@ -53,4 +56,3 @@
     <gamengine.version>4.1.6</gamengine.version>
   </properties>
 </project>
-
